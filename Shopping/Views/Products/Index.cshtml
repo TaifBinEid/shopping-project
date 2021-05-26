@@ -1,0 +1,62 @@
+﻿@{
+    var product = (List<ProductModel>)ViewData["product"];
+    var color = ViewData["color"];
+    Layout = "_Layout";
+
+
+}
+
+<table style="background-color:@color;" class="table table-hover">
+    <tbody>
+
+    <thead scope="col">
+    <td class="thead-light" style="background-color:#fffdf6"><b> Book Id</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Name</b></td>
+     
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"> <b> Book Price</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Author</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Image</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"> <b> Back</b> </td>
+    </thead>
+
+
+
+    @foreach (var p in product)
+    {
+        <tr>
+            <td scope="row" style="text-align:center ; color :#fffdf6 ">
+                @p.Id
+            </td>
+
+
+           <td style="text-align:center ; color :#fffdf6">
+               @p.Name
+           </td>
+
+
+           <td style="text-align:center ; color :#fffdf6" ">
+               @p.Price
+           </td>
+
+           <td style="text-align:center ; color :#fffdf6" ">
+               @p.Author
+           </td>
+
+            <td>
+                <img style="width:200px; height=200px " src="@p.Image" alt="@p.Image" />
+
+            </td>
+            <td style="text-align:center" >
+                <a href="/Products/Details/@p.Id">
+                    <button type="button" class="btn btn-outline-success">Show</button>
+                </a>
+            </td>
+        </tr>
+
+    }
+    </tbody>
+</table>

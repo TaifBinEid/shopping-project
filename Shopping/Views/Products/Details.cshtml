@@ -1,0 +1,56 @@
+﻿@{ var product = (ProductModel)ViewData["product"];
+
+}
+
+<table class="table table-bordered border-primary">
+
+    <tbody>
+
+    <thead scope="col">
+    <td class="thead-light" style="background-color:#fffdf6"><b> Book Id</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Name</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"> <b> Book Price</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Author</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"><b> Book Image</b></td>
+
+    <td scope="col" class="thead-light" style="background-color:#fffdf6"> <b> Back</b> </td>
+    </thead>
+
+
+
+    <tr>
+        <td scope="row" style="text-align:center ; color :#fffdf6 ">
+            @product.Id
+        </td>
+
+
+        <td scope="row" style="text-align:center ; color :#fffdf6 ">
+            @product.Name
+        </td>
+
+
+        <td scope="row" style="text-align:center ; color :#fffdf6 ">
+            @product.Price
+        </td>
+        <td scope="row" style="text-align:center ; color :#fffdf6 ">
+            @product.Author
+        </td>
+        <td>
+            <img style="width:200px; height=200px " src="@product.Image" alt="@product.Image" />
+
+        </td>
+        <td style="text-align:center">
+            <a href="/Products">
+                <button type="button" class="btn btn-outline-info">Back</button>
+            </a>
+        </td>
+    </tr>
+
+
+    </tbody>
+
+</table>
